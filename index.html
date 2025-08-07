@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Blog</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            line-height: 1.4;
+        }
+
+        h1 {
+            font-size: 32px;
+            letter-spacing: 4px;
+        }
+
+        nav a {
+            text-transform: lowercase;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <header>
+          <h1 class="tagline">the best programmer you'll never meet</h1>
+            <div class="ascii-art">
+  _______________
+ |  ___________  |        <span class="steam steam-1">(</span> <span class="steam steam-2">(</span>
+ | |<span class="blink">></span>          | |         <span class="steam steam-2">)</span> <span class="steam steam-3">)</span>
+ | |  AARON'S  | |      .........
+ | |    LOG    | |      |       |]
+ | |___________| |      \       /
+ |_______________|       `-----'
+ \_______O_______/
+          </div>
+        </header>
+
+        <nav>
+            <a href="#home" class="nav-btn active" onclick="showContent('home'); return false;">home</a>
+            <a href="#blog" class="nav-btn" onclick="showContent('blog'); return false;">blog</a>
+        </nav>
+
+        <div id="home" class="content active">
+            <h2>hi, i'm aaron.</h2>
+            <p>some things about me ~</p>
+            <p>i'm a software engineer (nvim btw). i spent 4 years in big tech and recently started working at a startup in the consumer ai space. i mostly do full-stack web development, but i like to explore other areas like ai, systems, databases, and hardware. and, of course, extending my nvim config.</p>
+            <p>for fun i like to walk my four dogs, play with my cat, watch various shows/anime, and sleep (proudly pro-nap). i also love coffee and consider it a personality trait.</p>
+            <p>this blog is going to serve as a place for my longer form and more permanent/serious content to live. X (twitter) is where i (mostly) shitpost and connect with people, and i don't currently plan on writing longer form technical content or experiments there.</p>
+            <p>the easiest way to contact me (if you want to) is through my DMs, which i check regularly. please don't message me asking if i want more followers, engagement, or growth. i am open to and have some experience mentoring and discussing technology.</p>
+        </div>
+
+        <div id="blog" class="content">
+            <h2>Blog Posts</h2>
+            <ul class="blog-list">
+                <li>
+                    <a href="/doing-things-yourself.html">doing things yourself</a>
+                    <p class="blog-meta">July 31, 2025 • programming</p>
+                    <p class="blog-preview">these days, it's incredibly common to do as little as possible yourself. there's an abundance of libraries, searchable public code repositories, and, of course, LLMs...</p>
+                </li>
+                <li>
+                    <a href="/how-to-shitpost.html">how to shitpost</a>
+                    <p class="blog-meta">July 30, 2025 • growth</p>
+                    <p class="blog-preview">shitposting. memes. ragebait. these days, lots of people are trying to grow on platforms like X (twitter). especially people in tech/startups...</p>
+                </li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>@aarondotdev © 2025 • built with nostalgia</p>
+        </footer>
+    </div>
+
+    <script>
+        function showContent(section) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(section).classList.add('active');
+            
+            event.target.classList.add('active');
+            
+            return false;
+        }
+    </script>
+</body>
+</html>
