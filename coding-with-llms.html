@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doing things yourself - aaron's blog</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-theme="temple">
+    <div class="container">
+        <header>
+            <h1>coding with llms</h1>
+            <p class="meta">august 7, 2025 • by aaron</p>
+            <div class="theme-switcher">
+                <button class="theme-btn active" onclick="setTheme('temple')">temple</button>
+                <button class="theme-btn" onclick="setTheme('pastel')">pastel</button>
+            </div>
+        </header>
+
+        <article>
+            <p>i hate coding with llms.</p>
+
+            <p>i've tried quite a few of the different workflows. cursor. claude code. dingllm. codex. actually, when i first started coding with llms, or at least experimenting with it, we were still on gpt-3. it was absolutely god-awful, and consisted of copy/pasting your code into the openai playground.</p>
+
+            <p>they've gotten very intelligent. in fact, as far as i'm concerned, they're generally intelligent. it's true. they may not be superintelligent (read: omniscient) but they know much more than i could ever fit in my head.</p>
+
+            <p>but coding isn't about knowing everything. if you know everything, coding isn't actually that fun. it gets incredibly boring, incredibly quickly. monotonous. soul-crushing. it's actually one of the reasons i'm leaving my job in big tech.</p>
+
+            <p>my current workflow consists of running multiple instances of claude code running opus 4.1 only. it's pricey, but the speed of execution and the intelligence is worth it. it's not all knowing. and it doesn't get everything right. maybe 50% of the time i don't have to make edits or guide it in the right direction.</p>
+
+            <p>a lot of people think of it as an intern. i'd agree with that analogy. it's like a few coders who aren't very experienced, but work fast and use the internet to look up how things should be. i guide them all in sequence and can accomplish probably 20% more in the same amount of time. probably 40% if there aren't a bunch of people using up the claude bandwidth.</p>
+            
+            <p>it's almost completely unenjoyable. my output is higher. and that's what is optimal for the startup i work at. i miss coding without llms. sure i could do it, but it would tank my productivity. i'm very invested in the success of the business, so i'm doing what's best for it.</p>
+
+            <p>i miss the confusion. the blind frustration. i miss traipsing through obscure 14 year old stack overflow threads. yeah, i'm nostalgic. i'm an unc. i can't help it. i had almost graduated college by the time chatgpt came out and the llm boom started.</p>
+
+            <p>quite often i urge young coders to not use llms for their coding. cursor for students is a trap to make you dependent on ai to write code. especially if you are learning, it is absolutely detrimental to your growth. using chat and asking questions is one thing, but by having it write the code for you, you're literally learning nothing.</p>
+
+            <p>it's like if you searched something on wikipedia, read it once, and said you learned it. if i gave you a test on it, you'd probably fail. the same is true for coding. you might think you understand the code that's written, but there is something absolutely crucial about writing the code and stepping to the learning process.</p>
+
+            <p>if you're mid-senior level like i am, you can get away with claude code because it lets you step through each change it makes. this differs from cursor because that shit tries to change literally as much as possible with each prompt. i'm not even going to get into how it completely handicaps some models. if you don't believe me, try claude code opus.</p>
+
+            <p>DHH has a good workflow. he only asks questions and doesn't let claude actually make any changes. he writes each line of code himself so that he ensures understanding. this is a man who is already worth millions of dollars and who created ruby on rails. if his workflow revolves around writing code manually, you should heavily consider doing the same.</p>
+
+            <p>i wish i could do that. i plan on getting back to it when i have more time. while DHH might have the luxury of time, moving just a bit slower, and drastically increasing his enjoyment, people like me are purely trying to optimize for maximuum output.</p>
+
+            <p>maybe this is just textbook late-stage capitalism. letting my financial interests get in the way of the enjoyment of my craft.</p>
+
+            <p>or maybe i've yet to discover the optimal workflow, the sweet spot between enjoyment and output.</p>
+
+            <p>i guess i'll see in the future.</p>
+        </article>
+        
+        <footer>
+            <p>@aarondotdev© 2025 • built with nostalgia</p>
+        </footer>
+    </div>
+
+    <script>
+        function setTheme(themeName) {
+            document.body.setAttribute('data-theme', themeName);
+            localStorage.setItem('theme', themeName);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'temple';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                if (btn.textContent === savedTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

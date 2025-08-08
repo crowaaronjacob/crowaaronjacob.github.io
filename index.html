@@ -21,7 +21,7 @@
 
     </style>
 </head>
-<body>
+<body data-theme="temple">
     <div class="container">
         
         <header>
@@ -35,6 +35,10 @@
  | |___________| |      \       /
  |_______________|       `-----'
  \_______O_______/
+          </div>
+          <div class="theme-switcher">
+              <button class="theme-btn active" onclick="setTheme('temple')">temple</button>
+              <button class="theme-btn" onclick="setTheme('pastel')">pastel</button>
           </div>
         </header>
 
@@ -55,6 +59,11 @@
         <div id="blog" class="content">
             <h2>Posts</h2>
             <ul class="blog-list">
+                <li>
+                    <a href="/coding-with-llms.html">coding with llms</a>
+                    <p class="blog-meta">August 7, 2025 • programming</p>
+                    <p class="blog-preview">i hate coding with llms...</p>
+                </li>
                 <li>
                     <a href="/doing-things-yourself.html">doing things yourself</a>
                     <p class="blog-meta">July 31, 2025 • programming</p>
@@ -89,6 +98,30 @@
             
             return false;
         }
+
+        function setTheme(themeName) {
+            document.body.setAttribute('data-theme', themeName);
+            localStorage.setItem('theme', themeName);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'temple';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                if (btn.textContent === savedTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
