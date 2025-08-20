@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how i'd get a job (the retard method) - aaron's log</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-theme="temple">
+    <div class="container">
+        <header>
+          <h1>how i'd get a job<br />(the retard method)</h1>
+            <p class="meta">august 19, 2025 • by aaron</p>
+            <div class="theme-switcher">
+                <button class="theme-btn active" onclick="setTheme('temple')">temple</button>
+                <button class="theme-btn" onclick="setTheme('pastel')">pastel</button>
+            </div>
+        </header>
+
+        <article>
+          <p>disclaimer: i did in fact get a job this year. sure it's at a startup, but the base is $13k more than my previous one. it's not faang or maanga or faagman or whatever the kids say these days, so follow at your own risk (or benefit)</p>
+          <p>i hate writing about how to get a job. the original title of this post was "how i'd get a swe job in 2025". however, i hate how close it sounds to the clickbait-y youtube titles i used to come up with when i tried to be a tech youtuber. so, instead, this is going to be a completely transparent, honest, and hopefully helpful blog post on what i would actually do if i found myself unemployed.</p>
+          <p>so, you're down on your luck in today's fucked up job market. the intern interview circuit didn't work in your favor. or maybe you hate your corporate job and want to find something more fun (like me), or something that pays better. in any case, you've applied to some places, things didn't work out as you'd hoped, and now you're seemingly out of options, right?</p>
+          <p><span class="italic">wrong</span>.</p>
+          <p>i'd be lying if i said that i got a job from posting my work online. HOWEVER, that doesn't mean i haven't both received offers to interview or work for people by shitposting and by posting my thoughts on the technologies that i work with every day.</p>
+          <p>this is definitely not the norm. 99% of people don't get jobs by posting. but 99% of people alos don't take it seriously. i post every hour that i'm awake. that's something like 16-18 posts a day. anyone who follows me knows that i don't post full projects or code or anything like it. and yet, i've gotten offers.</p>
+          <p>"but how?" you ask- i'm not exactly sure myself! this isn't a deterministic kind of thing. i can't just look at your account and instantly know how many offers you'll get and from what kinds of companies they'll be from. but here's what i do know.</p>
+          <p>many, many people post MUCH more technical content than i do. it's fucking awesome. seriously, if this is you, hats off. due to the proprietary aspect of everywhere i have worked, i unfortunately can't post details about what i am working on, so i have to be pretty vague.</p>
+          <p>this has worked a little bit to my advantage though. posts that are super techncial, while awesome (in my opinion), do not get a ton of reach- <span class="italic">*usually*</span>. shitposts end up getting pretty high reach if you do 'em right.</p>
+          <p>what seems to be optimal is a good mixture of technical and shitpost. more technical than my own profile. if you're truly an expert in your field then you should know what is impressive, what is new, what is intriguing to people in your field. if you're not an expert, you need to become one before trying to get a job. that's honestly juse a basic requirement in this job market.</p>
+          <p>if you're a junior, first and foremost i'm sorry. it is truly a terrible time to be a junior. my old corporate job i saw literally no interns come in after i did. not even any junior engineers. i was the last one for multiple years and to my time of leaving last week. big tech is absolutely not the place to look.</p>
+          <p>and, if i'm being honest, while the experience i gained in corporate was incredibly useful, i think that being at a startup would probably have given me more knowledge of actually building systems. at my new jbo i'm helping to build systems and optimize them from scratch at the scale of millions of users. in big tech, there is nothing that is done "from scratch".</p>
+          <p>i digress. if you're a junior, look for startups and smaller companies. there are absolutely tons of them here on X.</p>
+          <p>you might be wondering what i did to get my new job at what i consider a promising early-stage startup. the truth? i got an email from the founder that sounded too good to be true. it was a cold outreach email. when i asked why he sent an email to me, the founder told me it was because i seemed like a chill dude based on my bio (i listed my hobbies in linkedin bio).</p>
+          <p>that's it. having social proof (experience, projects, name recognition) and being the kind of person they want to work with. is this deterministically repeatable? probably not. but that's not what getting a job is about. you only need to get one job at a time.</p>
+          <p>i'm incredibly tired right now so if this post has veered off the rails a bit i apologize. nonetheless, here's a tldr of my advice:<p>
+          <ul>
+            <li>post technical content on platforms like X. thoughts, opinions, experiences in working with popular technologies or those relevant to your field.</li>
+            <li>shitpost or post other things to get reach (so people come to your profile and see your technical content).</li>
+            <li>be an expert. people don't want to take the loss of training up a junior just for them to bounce these days. be able to contribute the day you are onboarded.</li>
+            <li>come off as someone who people want to work with. don't be a dick online. don't be blatantly racist aside from jokes that are in good taste.</li>
+            <li>be opinionated, but ALWAYS be open to learning and changing those opinions. you don't know everything. nobody does.</p>
+          </ul>
+          <p>i hope this was helpful to at least one person. if that's you, lmk, i'd love to hear about it.</p>
+        </article>
+
+        <footer>
+            <p>@aarondotdev © 2025 • built with nostalgia</p>
+        </footer>
+    </div>
+
+    <script>
+        function setTheme(themeName) {
+            document.body.setAttribute('data-theme', themeName);
+            localStorage.setItem('theme', themeName);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'temple';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                if (btn.textContent === savedTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
