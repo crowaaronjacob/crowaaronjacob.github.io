@@ -114,9 +114,26 @@ nav a {
     cursor: pointer;
 }
 
-nav a:hover, nav a.active {
+nav a:hover {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
+}
+
+nav a.active {
+    background-color: var(--bg-dark);
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    position: relative;
+}
+
+nav a.active::after {
+    content: "▼";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--accent-primary);
+    font-size: 10px;
 }
 
 .nav-home {
@@ -318,4 +335,20 @@ code {
     color: var(--accent-primary);
     text-decoration: underline;
     font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+article ul,
+article ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+article li {
+    margin-bottom: 10px;
+    line-height: 1.8;
+    color: var(--text-primary);
 }
