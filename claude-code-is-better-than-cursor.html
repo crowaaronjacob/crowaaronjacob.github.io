@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>why claude code is better than cursor - aaron's log</title>
+    <link rel="icon" type="image/jpeg" href="/twitterpfp.jpg">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-theme="temple">
+    <div class="container">
+        <header>
+            <h1>claude code is better than cursor</h1>
+            <p class="meta">august 21, 2025 • by aaron</p>
+            <div class="theme-switcher">
+                <button class="theme-btn active" onclick="setTheme('temple')">temple</button>
+                <button class="theme-btn" onclick="setTheme('pastel')">pastel</button>
+            </div>
+        </header>
+
+        <article>
+          <p>it's true. everyone's favorite llm-powered dev tool is inferior to claude code. my source? trust me bro.</p>
+          <p>i don't have time for benchmarks. i've got much more important shit to do besides spending time validating my opinions with the scientific method just so that internet strangers can think i'm smarter. this take is completely anecdotal, from a full-stack developer who has spent hundreds of hours using both tools.</p>
+          <p>let's get into my two main issues with cursor.</p>
+          <p>1. it does too much</p>
+          <p><span class="italic">wha? don't you want your editor to do MORE for you? as MUCH as possible?</span></p>
+          <p>no, i actually don't want it to touch 15 fucking files at once while fumbling to make a simple change. context. windows. matter. just because you CAN use a large context window doesn't mean you SHOULD.</p>
+          <p>the last time i tried to use cursor, it did something wrong. i told it what was wrong and how to fix it, to which it responded by starting over and rewriting the logic from scratch. it produced the EXACT same code and ultimately was unable to solve the issue. this was using gemini-2.5-pro MAX.</p>
+          <p>in the same span of work, i was updating unit tests. cursor updated the relevant tests, ran them in the command line within its chat, and told me that they all passed. great right?</p>
+          <p><span class="italic">nope.</span> half of the tests were wrong.</p>
+          <p>with claude, i step through the code with the llm not even page by page but portion by portion. at any point in the logic if claude is being retarded, i can help reform its entire approach.</p>
+          <p>2. they throttle the llms</p>
+          <p>anectodally of course. cursor has pretty generous limits on their pricing tiers. seemingly. however, anyone who has used multiple llm providers or interfaces can anectodally tell you that the models seem noticeably less intelligent when used through cursor. i'm not talking about people who only use cursor, or people who don't understand programming deeply. i mean actual engineers with multiple years of experience that are power users, who have extensively tested a variety of these tools.</p>
+          <p>the pricing structure lends itself to this theory. call me a conspiracy theorist. but how would you increase your profit margins as a company which is wrapping these expensive models? if i was in charge of increasing revenue, i'd probably try to achieve the same user experience while using cheaper models. sure, maybe i'd use the explicitly selected model for some things, but i definitely wouldn't use the expensive-ass models in every prompt layer.</p>
+          <p>before you start hating on me you should know that i hate starbucks drinks for the same reason. there are entire teams at starbucks (and similar corporations) whose goal it is to make the drinks taste exactly the same for a much cheaper price using different chemicals and ingredients. don't even get me started on the quality.</p>
+          <p>maybe i'm just too stupid to use cursor. maybe i'm too stupid to handle that many changes at once. but if i have a tool that changes so much stuff at once i'm not even coding anymore, i'm just PR reviewing a bot that has absolutely no accountability. if you are just reading the code, you do not understand it at a fundamental level. i don't care how smart you are. you do NOT understand something deeply just through reading it without actually stepping through each part of the code yourself.</p>
+          <p>one thing i know about claude code is that it is created by the actual model creator and provider. anthropic has a vested interest in making the models as intelligent as possible through their product. if you're using it with API keys instead of through the flat pricing model, there is even less incentive for this as they make more money based on your usage. you are inarguably getting the beefiest model imaginable. if it's too stupid to do something, i'm confident that it's because llms are just not superintelligent yet.</p>
+          <p>tldr here is that cursor is great for one-shotting applications for people with limited programming experience that only care about output- not scale or anything with any complexity whatsoever.</p>
+          <p>however, for real, day-to-day programming and all of its complexities, claude code is by far my preferred llm dev tool.</p>
+        </article>
+
+        <footer>
+            <p>@aarondotdev © 2025 • built with nostalgia</p>
+        </footer>
+    </div>
+
+    <script>
+        function setTheme(themeName) {
+            document.body.setAttribute('data-theme', themeName);
+            localStorage.setItem('theme', themeName);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            event.target.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'temple';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                if (btn.textContent === savedTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
