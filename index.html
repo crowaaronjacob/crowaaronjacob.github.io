@@ -37,10 +37,6 @@
  |_______________|       `-----'
  \_______O_______/
           </div>
-          <div class="theme-switcher">
-              <button class="theme-btn active" onclick="setTheme('temple')">temple</button>
-              <button class="theme-btn" onclick="setTheme('pastel')">pastel</button>
-          </div>
         </header>
 
         <nav>
@@ -50,7 +46,7 @@
 
         <div id="about" class="content">
             <h2>hi, i'm aaron.</h2>
-            <p>some things about me ~</p>
+            <p>some things about me~</p>
             <p>i'm a software engineer (nvim btw). i spent 4 years in big tech and recently started working at a startup in the consumer ai space. i mostly do full-stack web development, but i like to explore other areas like ai, systems, databases, and hardware. and, of course, extending my nvim config.</p>
             <p>for fun i like to walk my four dogs, play with my cat, watch various shows/anime, and sleep (proudly pro-nap). i also love coffee and consider it a personality trait.</p>
             <p>this blog is going to serve as a place for my longer form and more permanent/serious content to live. X (twitter) is where i (mostly) shitpost and connect with people, and i don't currently plan on writing longer form technical content or experiments there.</p>
@@ -60,6 +56,11 @@
         <div id="blog" class="content active">
             <h2>Posts</h2>
             <ul class="blog-list">
+                <li>
+                    <a href="/how-much-to-not-work.html">how much to (not) work</a>
+                    <p class="blog-meta">october 17, 2025 • career</p>
+                    <p class="blog-preview">a lot. but also not very much. let me explain.</p>
+                </li>
                 <li>
                     <a href="/claude-code-is-better-than-cursor.html">claude code is better than cursor</a>
                     <p class="blog-meta">August 21, 2025 • programming</p>
@@ -109,30 +110,6 @@
             
             return false;
         }
-
-        function setTheme(themeName) {
-            document.body.setAttribute('data-theme', themeName);
-            localStorage.setItem('theme', themeName);
-            
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            event.target.classList.add('active');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme') || 'temple';
-            document.body.setAttribute('data-theme', savedTheme);
-            
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                if (btn.textContent === savedTheme) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        });
     </script>
 </body>
 </html>

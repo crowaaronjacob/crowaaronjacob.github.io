@@ -12,10 +12,6 @@
         <header>
           <h1>how i'd get a job<br />(the retard method)</h1>
             <p class="meta">august 19, 2025 • by aaron</p>
-            <div class="theme-switcher">
-                <button class="theme-btn active" onclick="setTheme('temple')">temple</button>
-                <button class="theme-btn" onclick="setTheme('pastel')">pastel</button>
-            </div>
         </header>
 
         <article>
@@ -49,32 +45,6 @@
             <p>@aarondotdev © 2025 • built with nostalgia</p>
         </footer>
     </div>
-
-    <script>
-        function setTheme(themeName) {
-            document.body.setAttribute('data-theme', themeName);
-            localStorage.setItem('theme', themeName);
-            
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            event.target.classList.add('active');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme') || 'temple';
-            document.body.setAttribute('data-theme', savedTheme);
-            
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                if (btn.textContent === savedTheme) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
 
